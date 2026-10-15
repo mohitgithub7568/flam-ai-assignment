@@ -1,0 +1,7 @@
+tokenizer: gpt2
+lang      fertility (tok/word)    tok/char
+------------------------------------------
+eng                       1.23       0.214
+hin                       7.52       1.583
+
+hin is 6.11x the fertility of eng (worse tokenization)

@@ -52,3 +52,35 @@ point 3 looks wrong. but this is just 1 sentence, need a proper parallel
 corpus to actually say this.
 
 Todo: need an indian language tokenizer for later.
+
+
+## Entry 3 - 15 Oct - testing each suspect one by one
+
+Hypothesis: the code bugs I found in entry 1 are why the report says 5.89x.
+if I fix them the number should change a lot.
+
+Experiment: copied fertility.py to partA/fertility_audit.py, changed one
+thing at a time, ran it, saved output in partA/evidence/, then git restore.
+
+Results (hin/eng ratio, baseline 5.89x):
+- removed random.seed + import -> 5.89x, no change, never used. harmless
+- removed NFC -> 5.89x, no change on these files. but दफ़्तर stored 2
+  different ways gives 10 vs 12 gpt2 tokens, NFC makes both 12. so it's
+  actually useful, keep it
+- split() instead of split(" ") -> 5.92x. eng 1.27->1.28, hin 7.45->7.60
+- no lower() -> 6.06x. only english changes. thursday, nasa, gpu each
+  become 2 tokens when lowercased, so english had 3 extra tokens (99 vs 96).
+  I guessed it would go down - I was right
+
+- total tokens / total words instead of per line average -> 5.91x
+  I guessed it would change a lot - I was wrong
+- all 3 fixes together (fertility_fixed.py) -> 6.11x
+
+Revision: I was wrong, the code bugs only move it ~4% and actually make
+hindi look worse not better. so the code bugs are not the main problem.
+the bigger problems are the tokenizer (5.7x -> 1.3x in entry 2), the files
+not being translations, and dividing by words at all.
+tried 3 denominators on the one real pair (train sentence): per word 6.86x,
+per char 8.1x, per sentence 5.71x. same tokens, 3 different answers.
+per sentence is what actually matters for cost because the meaning is the
+same. need a real parallel corpus to do this properly.
