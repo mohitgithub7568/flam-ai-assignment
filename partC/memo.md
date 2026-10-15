@@ -3,6 +3,9 @@
 **Recommendation:** (a) a small SFT (LoRA) on our model, with (c)
 prompt-only as the day 1 baseline. if prompting alone is already good
 enough on day 1, ship (c) and skip SFT.
+why SFT can beat the same prompt: when making training data offline we can
+generate a few versions and keep only the good ones, live we can't filter,
+and a long few-shot prompt costs extra tokens on every request.
 not (b): it adds a second model to every reply (more latency and GPU),
 models under 1B are weak at indian languages, it can change the meaning,
 and it needs the same training data as (a) anyway.

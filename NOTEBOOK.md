@@ -1,3 +1,5 @@
+# Notebook
+
 ## Entry 1 - 14 Oct - getting the report's numbers + reading the script
 
 Hypothesis: before calling anything a bug I need the same numbers as the
@@ -71,7 +73,6 @@ Results (hin/eng ratio, baseline 5.89x):
 - no lower() -> 6.06x. only english changes. thursday, nasa, gpu each
   become 2 tokens when lowercased, so english had 3 extra tokens (99 vs 96).
   I guessed it would go down - I was right
-
 - total tokens / total words instead of per line average -> 5.91x
   I guessed it would change a lot - I was wrong
 - all 3 fixes together (fertility_fixed.py) -> 6.11x
@@ -88,9 +89,12 @@ same. need a real parallel corpus to do this properly.
 
 ## Entry 4 - 15 Oct - there are 3 real pairs, not 1
 
-in entry 3 I used only the train sentence as "the one real pair". went
-back to the files and there are actually 3 real translations:
+in entry 1 I saw around 4 sentences that roughly match, but in entry 3 I
+only used the train sentence as "the one real pair". went back and checked
+them properly - 3 are real translations:
 eng 4 = hin 7 (cricket), eng 5 = hin 6 (train), eng 8 = hin 4 (mysuru)
+eng 7 / hin 10 is close but not the same ("please keep the books" vs
+"the books are kept").
 
 python partA/real_pairs.py -> all 3 pairs added together:
 gpt2 6.25x, cl100k 4.08x, o200k 1.39x per sentence. so the tokenizer

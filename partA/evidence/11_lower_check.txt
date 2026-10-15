@@ -1,0 +1,10 @@
+line 2: 8 -> 9 tokens after lower()
+   ['The', ' Quarterly', ' Review', ' meeting', ' moved', ' to', ' Thursday', '.']
+   ['the', ' quarterly', ' review', ' meeting', ' moved', ' to', ' th', 'ursday', '.']
+line 6: 10 -> 11 tokens after lower()
+   ['NASA', ' and', ' IS', 'RO', ' announced', ' a', ' joint', ' mission', ' update', '.']
+   ['n', 'asa', ' and', ' is', 'ro', ' announced', ' a', ' joint', ' mission', ' update', '.']
+line 10: 12 -> 13 tokens after lower()
+   ['The', ' GPU', ' cluster', ' ran', ' out', ' of', ' memory', ' during', ' the', ' night', ' job', '.']
+   ['the', ' g', 'pu', ' cluster', ' ran', ' out', ' of', ' memory', ' during', ' the', ' night', ' job', '.']
+english total: 96 -> 99

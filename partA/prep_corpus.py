@@ -29,4 +29,5 @@ for lang, code in langs.items():
         out.append(fixed)
 
     open(f"partA/corpus/{lang}.txt", "w", encoding="utf-8").write("\n".join(out) + "\n")
-    print(lang, len(out), "lines | nfc:", nfc, "quotes:", quotes, "spaces:", spaces)
+    words = sum(len(x.split()) for x in out)
+    print(lang, len(out), "lines | nfc:", nfc, "quotes:", quotes, "spaces:", spaces, "| words:", words)

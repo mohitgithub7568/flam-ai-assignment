@@ -1,0 +1,6 @@
+eng 1012 lines | nfc: 0 quotes: 0 spaces: 0 | words: 21901
+hin 1012 lines | nfc: 93 quotes: 0 spaces: 24 | words: 25643
+kan 1012 lines | nfc: 7 quotes: 0 spaces: 244 | words: 16100
+tam 1012 lines | nfc: 2 quotes: 60 spaces: 84 | words: 16763
+tel 1012 lines | nfc: 1 quotes: 68 spaces: 155 | words: 16936
+mal 1012 lines | nfc: 4 quotes: 58 spaces: 59 | words: 14924
