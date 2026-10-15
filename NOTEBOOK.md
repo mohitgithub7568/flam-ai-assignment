@@ -102,3 +102,24 @@ thought per word always makes it look worse. that was too much from one
 sentence. per word only goes wrong when the languages use different
 numbers of words for the same meaning - probably tamil/kannada, need a
 real corpus to check. per char is still off (7.47 vs 6.25).
+
+
+## Entry 5 - 15 Oct - real corpus + redoing the comparison
+
+Hypothesis: on real parallel text with an indian tokenizer the gap should
+be a lot smaller than 5.89x. and per word should hurt tamil/kannada since
+they join words.
+
+Experiment: flores devtest, 6 languages (prep_corpus.py). counted tokens
+with gpt2 and sarvam-1, per sentence and per word (a3.py).
+
+Result: gpt2 hindi 7.42x per sentence, dravidian 13-15x. sarvam-1 only
+1.13-1.35x. kannada per word 1.62x vs 1.19x per sentence, so yes per word
+makes it look worse.
+surprise: with sarvam-1 hindi per word is 0.97x, cheaper than english.
+didn't expect per word to go the other way. it's because hindi has more
+words than english for the same sentence.
+also kannada had 244 lines with double spaces, the intern's split(" ")
+would have counted fake words in all of them.
+
+Revision: per sentence vs english is the number to use.

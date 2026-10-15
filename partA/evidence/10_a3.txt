@@ -1,0 +1,18 @@
+gpt2
+lang, tok/sentence, tok/word, vs eng per sentence, vs eng per word
+eng 26.7 1.23 1.0 1.0
+hin 198.3 7.83 7.42 6.34
+kan 362.6 22.79 13.57 18.46
+tam 415.0 25.05 15.53 20.29
+tel 346.2 20.69 12.96 16.75
+mal 405.0 27.46 15.15 22.24
+
+sarvam-1
+lang, tok/sentence, tok/word, vs eng per sentence, vs eng per word
+eng 31.0 1.43 1.0 1.0
+hin 35.1 1.39 1.13 0.97
+kan 37.1 2.33 1.19 1.62
+tam 35.6 2.15 1.15 1.5
+tel 35.1 2.1 1.13 1.46
+mal 41.8 2.84 1.35 1.98
+
