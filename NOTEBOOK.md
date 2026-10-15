@@ -84,3 +84,21 @@ tried 3 denominators on the one real pair (train sentence): per word 6.86x,
 per char 8.1x, per sentence 5.71x. same tokens, 3 different answers.
 per sentence is what actually matters for cost because the meaning is the
 same. need a real parallel corpus to do this properly.
+
+
+## Entry 4 - 15 Oct - there are 3 real pairs, not 1
+
+in entry 3 I used only the train sentence as "the one real pair". went
+back to the files and there are actually 3 real translations:
+eng 4 = hin 7 (cricket), eng 5 = hin 6 (train), eng 8 = hin 4 (mysuru)
+
+python partA/real_pairs.py -> all 3 pairs added together:
+gpt2 6.25x, cl100k 4.08x, o200k 1.39x per sentence. so the tokenizer
+result still holds.
+
+surprise: per word = per sentence here (6.25 = 6.25) because both sides
+have 19 words. with only the train pair per word was 6.86 vs 5.71, so I
+thought per word always makes it look worse. that was too much from one
+sentence. per word only goes wrong when the languages use different
+numbers of words for the same meaning - probably tamil/kannada, need a
+real corpus to check. per char is still off (7.47 vs 6.25).

@@ -1,0 +1,10 @@
+Children are playing cricket on the ground. | बच्चे मैदान में क्रिकेट खेल रहे हैं।
+The train arrived exactly on time. | ट्रेन ठीक समय पर पहुँची।
+We are visiting Mysuru next week. | हम अगले हफ़्ते मैसूर जा रहे हैं।
+
+words: 19 19  chars: 110 92
+
+tokenizer      en   hi  per sentence  per word  per char
+gpt2           24  150          6.25      6.25      7.47
+cl100k_base    24   98          4.08      4.08      4.88
+o200k_base     23   32          1.39      1.39      1.66

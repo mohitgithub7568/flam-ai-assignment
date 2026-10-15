@@ -1,0 +1,6 @@
+words: 6 5  chars: 34 24
+
+tokenizer      en  hi  per sentence  per word  per char
+gpt2            7  40          5.71      6.86      8.10
+cl100k_base     7  25          3.57      4.29      5.06
+o200k_base      7   9          1.29      1.54      1.82
