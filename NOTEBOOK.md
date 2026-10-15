@@ -123,3 +123,21 @@ also kannada had 244 lines with double spaces, the intern's split(" ")
 would have counted fake words in all of them.
 
 Revision: per sentence vs english is the number to use.
+
+
+## Entry 6 - 16 Oct - part B capacity
+
+Hypothesis: the report's "longer prompts = better throughput" looks off.
+guessing reported_tok_s includes the prompt tokens.
+
+Experiment: partB/calc.py - kv bytes per token from model_spec, how many
+4096 sequences fit, and recomputed every row of bench_log.
+
+Result: 114,688 bytes per token, ~25.7 sequences of 4096 fit. predicted kv
+util matches the log exactly in every row that fits (0.93 at batch 24).
+reported_tok_s = (prompt + gen) / wall clock in every row, so yes it counts
+the prompt. real output at batch 24 long is only ~201 tok/s.
+batch 32 and 48 need more cache than exists -> preemption -> slower.
+
+Revision: report's 3200 tok/s at batch 48 is wrong twice - the log already
+has batch 48 at 1298, and only ~162 of that is real output.
